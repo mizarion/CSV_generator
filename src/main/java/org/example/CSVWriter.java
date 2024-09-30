@@ -22,11 +22,10 @@ public class CSVWriter {
             throw new IllegalArgumentException("The list of objects is empty");
         }
 
-        final Class<?> clazz = list.get(0).getClass();
+        final Class<?> clazz = list.getFirst().getClass();
         final Field[] fields = clazz.getDeclaredFields();
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-//        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out))) {
             // create csv header
             for (int i = 0; i < fields.length; i++) {
                 writer.write(fields[i].getName());

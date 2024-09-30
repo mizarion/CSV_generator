@@ -1,5 +1,7 @@
 package org.example;
 
-public record BusinessObject(int x, String name) {
+import java.util.List;
+
+public record BusinessObject(int x, String name, List<String> stringList) {
 
 }
